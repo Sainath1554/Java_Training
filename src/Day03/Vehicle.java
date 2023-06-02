@@ -1,6 +1,6 @@
 package Day03;
 
-public class Car {
+public class Vehicle {
     private int model;
     public String engineType()
     {
