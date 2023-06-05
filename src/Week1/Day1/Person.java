@@ -1,3 +1,5 @@
+package Week1.Day1;
+
 public class Person {
     private int age;
     private float weight;
@@ -32,6 +34,6 @@ public class Person {
     }
     void walk()
     {
-        System.out.println("Person is walking");
+        System.out.println("Week1.Day1.Person is walking");
     }
 }

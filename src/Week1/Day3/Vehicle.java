@@ -1,4 +1,4 @@
-package Day03;
+package Week1.Day3;
 
 public class Vehicle {
     private int model;
