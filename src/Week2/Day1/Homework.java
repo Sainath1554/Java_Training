@@ -23,10 +23,7 @@ public class Homework {
         } else if (age<13) {
             return "kid";
         }
-        else
-        {
             return "adult";
-        }
     }
 
     // print fibonacci series
