@@ -84,11 +84,11 @@ public class Homework {
 
     public static void main(String[] args)
     {
-        int num = 120;
+        int num = 12345;
         System.out.println("Reverse");
         System.out.println(getReverse(num));
         System.out.println("Age Group");
-        System.out.println(returnAgeGroup(20));
+        System.out.println(returnAgeGroup(8));
         System.out.println("fibonacci");
         getFibonacci(10);
         System.out.println("FizzBuzz");
