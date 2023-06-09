@@ -1,14 +1,12 @@
 package Week2.Day3;
 
-import java.lang.reflect.Array;
 import java.util.Arrays;
-import java.util.Map;
 
 public class Anagram {
     public static void main(String[] args)
     {
-        String s1 = "test";
-        String s2 = "etsa";
+        String s1 = "cinema";
+        String s2 = "iceman";
         if(s1.length()!=s2.length())
         {
             System.out.println("Not anagram");
