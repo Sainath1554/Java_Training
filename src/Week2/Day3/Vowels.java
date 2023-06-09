@@ -4,6 +4,7 @@ public class Vowels {
     public static void main(String[] args)
     {
         String s = "abcdei";
+        s= s.toLowerCase();
         int val = 0;
         for(int i=0;i<s.length();i++)
         {
