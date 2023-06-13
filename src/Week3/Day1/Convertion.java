@@ -17,7 +17,14 @@ public class Convertion {
                         System.out.println(val);
                     } catch (Exception e)
                     {
-                        System.out.println(e);
+                        try {
+                            throw new CustomException("Exception is " + e);
+                        }
+                        catch (Exception ex)
+                        {
+                            System.out.println(ex.getMessage());
+                        }
+//                        System.out.println(e);
                     }
                 }
         );
