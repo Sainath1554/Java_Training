@@ -1,10 +1,7 @@
 package Week2.Day3;
 
 import java.io.*;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.List;
+import java.util.*;
 
 public class ReadCSV {
     public static void main(String[] args) throws IOException {
@@ -17,7 +14,9 @@ public class ReadCSV {
             students.add(new Student(temp[0],temp[1],temp[2]));
         }
         br.close();
-        Collections.sort(students);
+        Collections.sort(students,Comparator.comparing(Student::getLastName));
+
+//        Collections.sort(students);
         System.out.println(students);
         File file = new File("src/Week2/Day3/updatedStudents.csv");
         FileWriter fw = new FileWriter(file);
@@ -34,6 +33,30 @@ public class ReadCSV {
 
 class Student implements Comparable<Student>
 {
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public String getGpa() {
+        return gpa;
+    }
+
+    public void setGpa(String gpa) {
+        this.gpa = gpa;
+    }
+
     String firstName;
     String lastName;
     String gpa;
