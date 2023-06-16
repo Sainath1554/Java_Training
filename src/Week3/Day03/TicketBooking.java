@@ -1,5 +1,6 @@
 package Week3.Day03;
 
+import javax.swing.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -7,17 +8,21 @@ import java.util.ArrayList;
 import java.util.List;
 class User
 {
-     int tickets = 1000;
+     int tickets = 100;
     public synchronized void getTickets() {
-        tickets--;
-        System.out.println(tickets+" "+Thread.currentThread().getName());
-        try{
-            notifyAll();
-            wait();
+        if (tickets > 0) {
+            tickets--;
+            System.out.println(tickets + " " + Thread.currentThread().getName());
+            try {
+                notifyAll();
+                wait(2000);
+            } catch (Exception e) {
+                System.out.println(e);
+            }
         }
-        catch(Exception e)
+        else
         {
-            System.out.println(e);
+            return;
         }
     }
 }
