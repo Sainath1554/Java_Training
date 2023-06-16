@@ -39,6 +39,7 @@ class Counter
     }
     synchronized void increment()
     {
+        System.out.println(Thread.currentThread().getName());
         c++;
     }
 }

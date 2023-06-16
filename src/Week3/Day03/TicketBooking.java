@@ -5,41 +5,36 @@ import java.util.List;
 
 import java.util.ArrayList;
 import java.util.List;
+class User
+{
+     int tickets = 1000;
+    public synchronized void getTickets() {
+        tickets--;
+        System.out.println(tickets+" "+Thread.currentThread().getName());
+    }
+}
 
-public class TicketBooking implements Runnable {
-    private int tickets = 1000;
-
+public class TicketBooking {
     public static void main(String[] args) {
         List<Thread> threads = new ArrayList<>();
-        TicketBooking ticketBooking = new TicketBooking();
+        User usr = new User();
 
         for (int i = 0; i < 5; i++) {
-            threads.add(new Thread(ticketBooking));
+            threads.add(new Thread()
+            {
+                @Override
+                public void run()
+                {
+                    while(usr.tickets>0)
+                    {
+                        usr.getTickets();
+                    }
+                }
+            });
         }
         for(Thread t:threads)
         {
             t.start();
-        }
-    }
-
-    @Override
-    public void run() {
-        getTickets();
-    }
-
-    public synchronized void getTickets() {
-        while(tickets>0) {
-            tickets--;
-            System.out.println(tickets + " " + Thread.currentThread().getName());
-            try {
-                notifyAll();
-                wait();
-            }
-            catch(Exception e)
-            {
-                System.out.println(e);
-            }
-
         }
     }
 }
