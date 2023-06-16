@@ -11,6 +11,14 @@ class User
     public synchronized void getTickets() {
         tickets--;
         System.out.println(tickets+" "+Thread.currentThread().getName());
+        try{
+            notifyAll();
+            wait();
+        }
+        catch(Exception e)
+        {
+            System.out.println(e);
+        }
     }
 }
 
