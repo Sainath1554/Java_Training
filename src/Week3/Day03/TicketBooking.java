@@ -13,7 +13,7 @@ class User
         System.out.println(tickets+" "+Thread.currentThread().getName());
         try{
             notifyAll();
-            wait(2000);
+            wait();
         }
         catch(Exception e)
         {
