@@ -1,10 +1,10 @@
 package Week4.Day1;
 
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
+import java.util.function.Consumer;
 
 public class Traverse {
     public static void main(String[] args) {
@@ -28,10 +28,25 @@ public class Traverse {
         }
 
         //forEach
+//        names.forEach(
+//                new Consumer<String>()
+//        {
+//            public void accept(String s)
+//            {
+//                System.out.println(s);
+//            }
+//        }
+//        );
+
+//        names.forEach(s->System.out.println(s));
         names.forEach(System.out::println);
+
 
         //parallel Stream
         names.stream().parallel().forEach(System.out::println);
+
+        //parrale Stream without changing order
+        names.stream().parallel().forEachOrdered(System.out::println);
     }
 }
 
