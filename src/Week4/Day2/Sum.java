@@ -1,13 +1,15 @@
 package Week4.Day2;
 
 import java.util.HashMap;
+import java.util.LinkedHashMap;
+import java.util.List;
 import java.util.Map;
 
 public class Sum {
     public static void main(String[] args) {
-        int[] nums = {10,20,30,40,50,60};
+        int[] nums = {10,20,30,40,50,60,70,50};
         int target = 100;
-        HashMap<Integer,Integer> numbersMap = new HashMap<>();
+        LinkedHashMap<Integer,Integer> numbersMap = new LinkedHashMap<>();
         for(int i=0;i<nums.length;i++) {
             numbersMap.put(nums[i], i);
         }
